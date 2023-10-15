@@ -5,6 +5,7 @@
 *.gba
 !data/*.gba
 *.sgm
+*.sav
 *.sa1
 *.ss[0-9]
 *.sg1
@@ -39,3 +40,5 @@ prefabs.json
 *.diff
 *.sym
 *.js
+tools/poryscript
+save_files
