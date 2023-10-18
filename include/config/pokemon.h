@@ -2,9 +2,9 @@
 #define GUARD_CONFIG_POKEMON_H
 
 // Species data settings
-#define P_UPDATED_TYPES             GEN_LATEST  // Since Gen 6, several Pokémon were changed to be partially or fully Fairy type.
-#define P_UPDATED_STATS             GEN_LATEST  // Since Gen 6, Pokémon stats are updated with each passing generation.
-#define P_UPDATED_ABILITIES         GEN_LATEST  // Since Gen 6, certain Pokémon have their abilities changed.
+#define P_UPDATED_TYPES             GEN_3  // Since Gen 6, several Pokémon were changed to be partially or fully Fairy type.
+#define P_UPDATED_STATS             GEN_3  // Since Gen 6, Pokémon stats are updated with each passing generation.
+#define P_UPDATED_ABILITIES         GEN_3  // Since Gen 6, certain Pokémon have their abilities changed.
 #define P_UPDATED_EGG_GROUPS        GEN_LATEST  // Since Gen 8, certain Pokémon have gained new egg groups.
 
 // Breeding settings
@@ -39,9 +39,9 @@
 // If you're disabling a generation previous to others (eg: Gen 5 but not Gen 6, 7 and 8),
 // remember to update NATIONAL_DEX enum in include/constants/pokedex.h to avoid players from softlocking in the non-existant entries.
 #define P_GEN_4_POKEMON             TRUE        // Generation 4 Pokémon (DPPt, HGSS)
-#define P_GEN_5_POKEMON             TRUE        // Generation 5 Pokémon (BW, B2W2)
-#define P_GEN_6_POKEMON             TRUE        // Generation 6 Pokémon (XY, ORAS)
-#define P_GEN_7_POKEMON             TRUE        // Generation 7 Pokémon (SM, USUM, LGPE)
-#define P_GEN_8_POKEMON             TRUE        // Generation 8 Pokémon (SwSh, BDSP, LA)
+#define P_GEN_5_POKEMON             FALSE        // Generation 5 Pokémon (BW, B2W2)
+#define P_GEN_6_POKEMON             FALSE        // Generation 6 Pokémon (XY, ORAS)
+#define P_GEN_7_POKEMON             FALSE        // Generation 7 Pokémon (SM, USUM, LGPE)
+#define P_GEN_8_POKEMON             FALSE        // Generation 8 Pokémon (SwSh, BDSP, LA)
 
 #endif // GUARD_CONFIG_POKEMON_H
