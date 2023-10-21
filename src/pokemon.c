@@ -7227,6 +7227,9 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
             evIncrease = val1 - val2;
         }
 
+        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)     //no EVs gained from trainer battles
+            evIncrease = 0;
+
         evs[i] += evIncrease;
         totalEVs += evIncrease;
         SetMonData(mon, MON_DATA_HP_EV + i, &evs[i]);
@@ -7470,11 +7473,20 @@ u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
     u16 learnedMoves[4];
     u8 numMoves = 0;
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
-    u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
+    u8 level = 100; //GetMonData(mon, MON_DATA_LEVEL, 0)
     int i, j, k;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
         learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    for (i = 0; i < NUM_SOFT_CAPS; i++)
+    {
+        if (!FlagGet(sRelearnCapFlags[i]))
+        {
+            level = sRelearnCaps[i];
+            break;
+        }
+    }
 
     for (i = 0; i < MAX_LEVEL_UP_MOVES; i++)
     {
@@ -7521,7 +7533,7 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
     u16 moves[MAX_LEVEL_UP_MOVES];
     u8 numMoves = 0;
     u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
-    u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
+    u8 level = 100; //GetMonData(mon, MON_DATA_LEVEL, 0)
     int i, j, k;
 
     if (species == SPECIES_EGG)
@@ -7529,6 +7541,15 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
 
     for (i = 0; i < MAX_MON_MOVES; i++)
         learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    for (i = 0; i < NUM_SOFT_CAPS; i++)
+    {
+        if (!FlagGet(sRelearnCapFlags[i]))
+        {
+            level = sRelearnCaps[i];
+            break;
+        }
+    }
 
     for (i = 0; i < MAX_LEVEL_UP_MOVES; i++)
     {
