@@ -349,33 +349,34 @@ static const u8 sBigMalasadaDesc[] = _(
 
 // Vitamins
 static const u8 sHPUpDesc[] = _(
-    "Raises the base HP\n"
-    "of one Pokémon.");
+    "Raises the HP\n"
+    "EV of a Pokémon\n"
+    "by 40.");
 
 static const u8 sProteinDesc[] = _(
-    "Raises the base\n"
-    "Attack stat of one\n"
-    "Pokémon.");
+    "Raises the Attack\n"
+    "EV of a Pokémon\n"
+    "by 40.");
 
 static const u8 sIronDesc[] = _(
-    "Raises the base\n"
-    "Defense stat of\n"
-    "one Pokémon.");
+    "Raises the Defense\n"
+    "EV of a Pokémon\n"
+    "by 40.");
 
 static const u8 sCalciumDesc[] = _(
-    "Raises the base\n"
-    "Sp. Atk stat of one\n"
-    "Pokémon.");
+    "Raises the Sp. Atk.\n"
+    "EV of a Pokémon\n"
+    "by 40.");
 
 static const u8 sZincDesc[] = _(
-    "Raises the base\n"
-    "Sp. Def stat of one\n"
-    "Pokémon.");
+    "Raises the Sp. Def.\n"
+    "EV of a Pokémon\n"
+    "by 40.");
 
 static const u8 sCarbosDesc[] = _(
-    "Raises the base\n"
-    "Speed stat of one\n"
-    "Pokémon.");
+    "Raises the Speed\n"
+    "EV of a Pokémon\n"
+    "by 40.");
 
 static const u8 sPPUpDesc[] = _(
     "Raises the maximum\n"
@@ -389,34 +390,34 @@ static const u8 sPPMaxDesc[] = _(
 
 // EV Feathers
 static const u8 sHealthFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base HP of\n"
-    "a Pokémon.");
+    "Raises the HP\n"
+    "EV of a Pokémon\n"
+    "by 4.");
 
 static const u8 sMuscleFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Attack of\n"
-    "a Pokémon.");
+    "Raises the Attack\n"
+    "EV of a Pokémon\n"
+    "by 4.");
 
 static const u8 sResistFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Defense\n"
-    "of a Pokémon.");
+    "Raises the Defense\n"
+    "EV of a Pokémon\n"
+    "by 4.");
 
 static const u8 sGeniusFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Sp. Atk.\n"
-    "of a Pokémon.");
+    "Raises the Sp. Atk.\n"
+    "EV of a Pokémon\n"
+    "by 4.");
 
 static const u8 sCleverFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Sp. Def.\n"
-    "of a Pokémon.");
+    "Raises the Sp. Def.\n"
+    "EV of a Pokémon\n"
+    "by 4.");
 
 static const u8 sSwiftFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Speed of\n"
-    "a Pokémon.");
+    "Raises the Speed\n"
+    "EV of a Pokémon\n"
+    "by 4.");
 
 // Ability Modifiers
 static const u8 sAbilityCapsuleDesc[] = _(
@@ -530,9 +531,9 @@ static const u8 sNaiveMintDesc[] = _(
     "reduces Sp. Def.");
 
 static const u8 sSeriousMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Speed, but\n"
-    "reduces Attack.");
+    "Can be smelled. All\n"
+    "stats grow at\n"
+    "the same rate.");
 
 // Candy
 static const u8 sRareCandyDesc[] = _(

@@ -617,11 +617,13 @@ static void Cmd_callnative(void);
 //source: https://www.pokecommunity.com/showthread.php?t=435445
 const u16 sRelearnCapFlags[NUM_SOFT_CAPS] =
 {
+    FLAG_DEFEATED_RIVAL_ROUTE103, FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE, 
     FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET, 
     FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET
 };
 
-const u16 sRelearnCaps[NUM_SOFT_CAPS] = { 16, 20, 25, 30, 
+const u16 sRelearnCaps[NUM_SOFT_CAPS] = { 5, 9, 
+                                          15, 19, 25, 30, 
                                           33, 36, 42, 50 };
 
 void (* const gBattleScriptingCommandsTable[])(void) =
@@ -1073,38 +1075,38 @@ static const u16 sNaturePowerMoves[BATTLE_TERRAIN_COUNT] =
 static const u16 sPickupItems[] =
 {
     ITEM_POTION,
-    ITEM_ANTIDOTE,
-    ITEM_SUPER_POTION,
     ITEM_GREAT_BALL,
     ITEM_REPEL,
-    ITEM_ESCAPE_ROPE,
-    ITEM_X_ATTACK,
     ITEM_FULL_HEAL,
+    ITEM_ELIXIR,
+    ITEM_REVIVE,
+    ITEM_PP_UP,
+    ITEM_HEART_SCALE,
+    ITEM_BOTTLE_CAP,
+    ITEM_ETHER,
+    ITEM_SUPER_POTION,
+    ITEM_SUPER_REPEL,
     ITEM_ULTRA_BALL,
     ITEM_HYPER_POTION,
-    ITEM_RARE_CANDY,
-    ITEM_PROTEIN,
-    ITEM_REVIVE,
-    ITEM_HP_UP,
+    ITEM_MAX_REPEL,
     ITEM_FULL_RESTORE,
     ITEM_MAX_REVIVE,
-    ITEM_PP_UP,
     ITEM_MAX_ELIXIR,
 };
 
 static const u16 sRarePickupItems[] =
 {
+    ITEM_LIECHI_BERRY,
+    ITEM_PETAYA_BERRY,
+    ITEM_SALAC_BERRY,
     ITEM_HYPER_POTION,
     ITEM_NUGGET,
     ITEM_KINGS_ROCK,
+    ITEM_STAR_PIECE,
     ITEM_FULL_RESTORE,
-    ITEM_ETHER,
+    ITEM_PP_MAX,
     ITEM_WHITE_HERB,
-    ITEM_TM_REST,
-    ITEM_ELIXIR,
-    ITEM_TM_FOCUS_PUNCH,
     ITEM_LEFTOVERS,
-    ITEM_TM_EARTHQUAKE,
 };
 
 static const u8 sPickupProbabilities[] =

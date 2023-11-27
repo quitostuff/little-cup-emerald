@@ -2,7 +2,7 @@
 #define GUARD_EVENT_DATA_H
 
 //source: https://www.pokecommunity.com/showthread.php?t=435445
-#define NUM_SOFT_CAPS 8
+#define NUM_SOFT_CAPS 10
 
 void InitEventData(void);
 void ClearTempFieldEventData(void);
