@@ -77,8 +77,7 @@ const u16 gEggMoves[] = {
         MOVE_CRUSH_CLAW,
         MOVE_SAFEGUARD,
         MOVE_ROCK_SLIDE,
-        MOVE_SWORDS_DANCE,
-),
+        MOVE_SWORDS_DANCE),
 
     egg_moves(NIDORAN_F,
         MOVE_SUPERSONIC,
@@ -4199,8 +4198,7 @@ const u16 gEggMoves[] = {
         MOVE_CRUSH_CLAW,
         MOVE_SAFEGUARD,
         MOVE_ROCK_SLIDE,
-        MOVE_SWORDS_DANCE,
-        ),
+        MOVE_SWORDS_DANCE),
 
     egg_moves(VULPIX_ALOLAN,
         MOVE_AGILITY,

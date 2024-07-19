@@ -7170,9 +7170,9 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
             break;
 
         if (CheckPartyHasHadPokerus(mon, 0))
-            multiplier = 8;
+            multiplier = 16;
         else
-            multiplier = 4;
+            multiplier = 8;
 
         switch (i)
         {

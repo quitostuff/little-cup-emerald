@@ -1663,13 +1663,13 @@
               },
               {
                 "min_level": 2,
-                "max_level": 4,
+                "max_level": 3,
                 "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_TYROGUE"
+                "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 3,
@@ -1688,8 +1688,8 @@
               },
               {
                 "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_ZUBAT"
+                "max_level": 4,
+                "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 3,
@@ -1732,13 +1732,13 @@
               },
               {
                 "min_level": 2,
-                "max_level": 4,
+                "max_level": 3,
                 "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_TYROGUE"
+                "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 3,
@@ -1757,8 +1757,8 @@
               },
               {
                 "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_ZUBAT"
+                "max_level": 4,
+                "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 3,
@@ -2131,13 +2131,13 @@
               },
               {
                 "min_level": 2,
-                "max_level": 4,
+                "max_level": 3,
                 "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_TYROGUE"
+                "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 3,
@@ -2156,8 +2156,8 @@
               },
               {
                 "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_ZUBAT"
+                "max_level": 4,
+                "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 3,
@@ -4234,13 +4234,13 @@
               },
               {
                 "min_level": 2,
-                "max_level": 4,
+                "max_level": 3,
                 "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_TYROGUE"
+                "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 3,
@@ -4259,8 +4259,8 @@
               },
               {
                 "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_ZUBAT"
+                "max_level": 4,
+                "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 3,
@@ -10444,64 +10444,64 @@
             "encounter_rate": 7,
             "mons": [
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_NATU"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_MAREEP"
               },
               {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_CHIKORITA"
               },
               {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_CYNDAQUIL"
               },
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_TOTODILE"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_CHINGLING"
               },
               {
-                "min_level": 16,
-                "max_level": 16,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_CHIKORITA"
               },
               {
-                "min_level": 6,
-                "max_level": 6,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_CYNDAQUIL"
               },
               {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_TOTODILE"
               },
               {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_LARVITAR"
               },
               {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_TOTODILE"
               },
               {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_ZUBAT"
+                "min_level": 3,
+                "max_level": 4,
+                "species": "SPECIES_LARVITAR"
               }
             ]
           }

@@ -142,9 +142,9 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_LEDYBA]                = {{EVO_LEVEL, 18, SPECIES_LEDIAN}},
     [SPECIES_SPINARAK]              = {{EVO_LEVEL, 22, SPECIES_ARIADOS}},
     [SPECIES_CHINCHOU]              = {{EVO_LEVEL, 27, SPECIES_LANTURN}},
-    [SPECIES_PICHU]                 = {{EVO_FRIENDSHIP, 0, SPECIES_PIKACHU}},
-    [SPECIES_CLEFFA]                = {{EVO_FRIENDSHIP, 0, SPECIES_CLEFAIRY}},
-    [SPECIES_IGGLYBUFF]             = {{EVO_FRIENDSHIP, 0, SPECIES_JIGGLYPUFF}},
+    [SPECIES_PICHU]                 = {{EVO_LEVEL, 5, SPECIES_PIKACHU}},
+    [SPECIES_CLEFFA]                = {{EVO_LEVEL, 5, SPECIES_CLEFAIRY}},
+    [SPECIES_IGGLYBUFF]             = {{EVO_LEVEL, 5, SPECIES_JIGGLYPUFF}},
     [SPECIES_TOGEPI]                = {{EVO_FRIENDSHIP, 0, SPECIES_TOGETIC}},
 #if P_GEN_4_POKEMON == TRUE
     [SPECIES_TOGETIC]               = {{EVO_ITEM, ITEM_SHINY_STONE, SPECIES_TOGEKISS}},
@@ -269,7 +269,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_LAIRON]                = {{EVO_LEVEL, 42, SPECIES_AGGRON}},
     [SPECIES_LILEEP]                = {{EVO_LEVEL, 40, SPECIES_CRADILY}},
     [SPECIES_ANORITH]               = {{EVO_LEVEL, 40, SPECIES_ARMALDO}},
-    [SPECIES_RALTS]                 = {{EVO_LEVEL, 20, SPECIES_KIRLIA}},
+    [SPECIES_RALTS]                 = {{EVO_LEVEL, 5, SPECIES_KIRLIA}},
     [SPECIES_KIRLIA]                = {{EVO_LEVEL, 30, SPECIES_GARDEVOIR},
                                     #if P_GEN_4_POKEMON == TRUE
                                        {EVO_ITEM_MALE, ITEM_DAWN_STONE, SPECIES_GALLADE}

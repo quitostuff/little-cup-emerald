@@ -617,14 +617,16 @@ static void Cmd_callnative(void);
 //source: https://www.pokecommunity.com/showthread.php?t=435445
 const u16 sRelearnCapFlags[NUM_SOFT_CAPS] =
 {
-    FLAG_DEFEATED_RIVAL_ROUTE103, FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE, 
-    FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET, 
-    FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET
+    FLAG_DEFEATED_RIVAL_ROUTE103, FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE, FLAG_BADGE01_GET, 
+    FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, FLAG_BADGE04_GET, 
+    FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, 
+    FLAG_BADGE07_GET, FLAG_BADGE08_GET
 };
 
-const u16 sRelearnCaps[NUM_SOFT_CAPS] = { 5, 9, 
-                                          15, 19, 25, 30, 
-                                          33, 36, 42, 50 };
+const u16 sRelearnCaps[NUM_SOFT_CAPS] = { 5, 10, 15, 
+                                          19, 25, 30, 33,  
+                                          36, 40, 43, 
+                                          46, 50 };
 
 void (* const gBattleScriptingCommandsTable[])(void) =
 {

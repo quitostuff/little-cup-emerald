@@ -351,32 +351,32 @@ static const u8 sBigMalasadaDesc[] = _(
 static const u8 sHPUpDesc[] = _(
     "Raises the HP\n"
     "EV of a Pokémon\n"
-    "by 40.");
+    "by 80.");
 
 static const u8 sProteinDesc[] = _(
     "Raises the Attack\n"
     "EV of a Pokémon\n"
-    "by 40.");
+    "by 80.");
 
 static const u8 sIronDesc[] = _(
     "Raises the Defense\n"
     "EV of a Pokémon\n"
-    "by 40.");
+    "by 80.");
 
 static const u8 sCalciumDesc[] = _(
     "Raises the Sp. Atk.\n"
     "EV of a Pokémon\n"
-    "by 40.");
+    "by 80.");
 
 static const u8 sZincDesc[] = _(
     "Raises the Sp. Def.\n"
     "EV of a Pokémon\n"
-    "by 40.");
+    "by 80.");
 
 static const u8 sCarbosDesc[] = _(
     "Raises the Speed\n"
     "EV of a Pokémon\n"
-    "by 40.");
+    "by 80.");
 
 static const u8 sPPUpDesc[] = _(
     "Raises the maximum\n"
