@@ -132,7 +132,7 @@ Route119_EventScript_DefeatedBrendan::
 	end
 
 Route119_EventScript_GiveFlyHM::
-	giveitem ITEM_HM_FLY
+	giveitem ITEM_HM_STRENGTH
 	setflag FLAG_RECEIVED_HM_FLY
 	return
 
@@ -499,16 +499,16 @@ Route119_Text_MayPresentForYou:
 	.string "And, here! I have a present for you.$"
 
 Route119_Text_MayExplainFly:
-	.string "MAY: Use FLY, and your POKéMON will\n"
-	.string "instantly carry you to any town you've\l"
-	.string "already visited.\p"
-	.string "But, to use FLY, you have to get\n"
+	.string "MAY: Use STRENGTH, and your POKéMON will\n"
+	.string "be able to push even the largest\l"
+	.string "of boulders.\p"
+	.string "But, to use STRENGTH, you have to get\n"
 	.string "the GYM BADGE from FORTREE CITY.\l"
 	.string "That's important, so don't forget.\p"
-	.string "You should FLY home and visit\n"
-	.string "LITTLEROOT for a change.\p"
-	.string "I bet your mom's worried about you,\n"
-	.string "{PLAYER}{KUN}.\p"
+	.string "You should stop by LITTLEROOT\n"
+	.string "and check up on your mom.\p"
+	.string "I bet she'd love to know how strong\n"
+	.string "you've become, {PLAYER}{KUN}.\p"
 	.string "Well, let's meet again somewhere!$"
 
 Route119_Text_BrendanIntro:
@@ -530,9 +530,9 @@ Route119_Text_BrendanIllGiveYouThis:
 	.string "Try it out.$"
 
 Route119_Text_BrendanExplainFly:
-	.string "BRENDAN: Use FLY, and your POKéMON\n"
-	.string "instantly carries you to any town\l"
-	.string "you've already visited.\p"
+	.string "BRENDAN: Use STRENGTH, and your POKéMON\n"
+	.string "can push any boulder that you may\l"
+	.string "stumble upon while exploring.\p"
 	.string "But you need the FORTREE GYM BADGE \n"
 	.string "to do that.\p"
 	.string "Anyway, I have to move along.$"

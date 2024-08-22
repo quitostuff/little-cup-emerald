@@ -1184,14 +1184,14 @@
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
 #define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
+#define FLAG_RECEIVED_DAYCARE_SLUGMA                                0x472 // Unused Flag, now used for a gift Slugma at the Daycare
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
+#define FLAG_HIDE_DEFENSE_CURL_TUTOR                                0x479 // Unused Flag, now hides a girl lost in Granite Cave
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
@@ -1219,28 +1219,28 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
 #define FLAG_PARTY_MOVES                                            0x493 // Move Reminder from party menu, source: https://www.pokecommunity.com/showpost.php?p=10470602
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_SNORE                                0x494 // Additional Tutor Moves
+#define FLAG_MOVE_TUTOR_TAUGHT_DEFENSE_CURL                         0x495 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_MUD_SLAP                             0x496 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_SWIFT                                0x497 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_ICY_WIND                             0x498 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_ENDURE                               0x499 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_PSYCH_UP                             0x49A // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_FIRE_PUNCH                           0x49B // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_ICE_PUNCH                            0x49C // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_THUNDER_PUNCH                        0x49D // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_SOFTBOILED                           0x49E // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_SEISMIC_TOSS                         0x49F // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_DREAM_EATER                          0x4A0 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_MEGA_PUNCH                           0x4A1 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_MEGA_KICK                            0x4A2 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_BODY_SLAM                            0x4A3 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_ROCK_SLIDE                           0x4A4 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_COUNTER                              0x4A5 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_THUNDER_WAVE                         0x4A6 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_SWORDS_DANCE                         0x4A7 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_NIGHTMARE                            0x4A8 // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_SKY_ATTACK                           0x4A9 // 
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag

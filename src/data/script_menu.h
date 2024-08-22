@@ -771,6 +771,28 @@ static const struct MenuAction MultichoiceList_TagMatchType[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_BottleCapStats[] =
+{
+    {gText_HP4},
+    {gText_Attack3},
+    {gText_Defense3},
+    {gText_SpAtk4},
+    {gText_SpDef4},
+    {gText_Speed2},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_SinnohBabies[] =
+{
+    {gText_Budew},
+    {gText_Chingling},
+    {gText_Happiny},
+    {gText_Bonsly},
+    {gText_MimeJr},
+    {gText_Mantyke},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -898,6 +920,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SLATEPORT_TENT_RULES]       = MULTICHOICE(MultichoiceList_SlateportTentRules),
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
+    [MULTI_BOTTLE_CAP_STATS]           = MULTICHOICE(MultichoiceList_BottleCapStats),
+    [MULTI_SINNOH_BABIES]              = MULTICHOICE(MultichoiceList_SinnohBabies),
 };
 
 const u8 *const gStdStrings[] =

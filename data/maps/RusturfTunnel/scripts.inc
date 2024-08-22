@@ -62,7 +62,7 @@ RusturfTunnel_EventScript_ClearTunnelScene::
 	msgbox RusturfTunnel_Text_YouShatteredBoulderTakeHM, MSGBOX_DEFAULT
 	call_if_eq VAR_TEMP_1, 2, RusturfTunnel_EventScript_WandasBoyfriendApproachPlayer
 	call_if_eq VAR_TEMP_1, 3, RusturfTunnel_EventScript_WandasBoyfriendApproachPlayer
-	giveitem ITEM_HM_STRENGTH
+	giveitem ITEM_HM_FLY
 	setflag FLAG_RECEIVED_HM_STRENGTH
 	msgbox RusturfTunnel_Text_ExplainStrength, MSGBOX_DEFAULT
 	closemessage
@@ -496,10 +496,10 @@ RusturfTunnel_Text_YouShatteredBoulderTakeHM:
 	.string "I'd like you to have this HM.$"
 
 RusturfTunnel_Text_ExplainStrength:
-	.string "That HM contains STRENGTH.\p"
-	.string "If a muscular POKéMON were to learn\n"
-	.string "that, it would be able to move even\l"
-	.string "large boulders.$"
+	.string "That HM contains FLY.\p"
+	.string "If a nimble POKéMON were to learn\n"
+	.string "that, it would be able to carry you\l"
+	.string "to any town you've visited.$"
 
 RusturfTunnel_Text_WandaReunion:
 	.string "WANDA!\n"

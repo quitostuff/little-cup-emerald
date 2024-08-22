@@ -258,6 +258,58 @@ MoveTutor_EventScript_ExplosionTaught::
 	release
 	end
 
+RustboroCity_PokemonSchool_EventScript_SnoreTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SNORE, MoveTutor_EventScript_SnoreTaught
+	msgbox MoveTutor_Text_SnoreTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SnoreDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SnoreDeclined
+	msgbox MoveTutor_Text_SnoreWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SNORE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SnoreDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_SNORE
+	goto MoveTutor_EventScript_SnoreTaught
+	end
+
+MoveTutor_EventScript_SnoreDeclined::
+	msgbox MoveTutor_Text_SnoreDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SnoreTaught::
+	msgbox MoveTutor_Text_SnoreTaught, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_EventScript_MudSlapTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_MUD_SLAP, MoveTutor_EventScript_MudSlapTaught
+	msgbox MoveTutor_Text_MudSlapTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MudSlapDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MudSlapDeclined
+	msgbox MoveTutor_Text_MudSlapWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_MUD_SLAP
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MudSlapDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_MUD_SLAP
+	goto MoveTutor_EventScript_MudSlapTaught
+	end
+
+MoveTutor_EventScript_MudSlapDeclined::
+	msgbox MoveTutor_Text_MudSlapDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_MudSlapTaught::
+	msgbox MoveTutor_Text_MudSlapTaught, MSGBOX_DEFAULT
+	release
+	end
+
 MoveTutor_EventScript_OpenPartyMenu::
 	special ChooseMonForMoveTutor
 	waitstate

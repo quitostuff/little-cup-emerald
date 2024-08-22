@@ -536,3 +536,9 @@ gSpecials::
 	def_special TrySetBattleTowerLinkType
 	def_special SetTotemBoost
 	def_special TrySpecialOverworldEvo
+	def_special SetHpIVs
+	def_special SetAtkIVs
+	def_special SetDefIVs
+	def_special SetSpdIVs
+	def_special SetSpAtkIVs
+	def_special SetSpDefIVs

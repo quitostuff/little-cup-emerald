@@ -3040,4 +3040,11 @@ extern const u8 gText_ExpShareOff[];
 
 extern const u8 gText_Moves_Menu[];
 
+extern const u8 gText_Bonsly[];
+extern const u8 gText_MimeJr[];
+extern const u8 gText_Chingling[];
+extern const u8 gText_Budew[];
+extern const u8 gText_Happiny[];
+extern const u8 gText_Mantyke[];
+
 #endif // GUARD_STRINGS_H

@@ -61,7 +61,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle1::
 	msgbox Route110_TrickHouseEnd_Text_AllNightToPlantTrees, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
-	giveitem ITEM_RARE_CANDY
+	giveitem ITEM_BOTTLE_CAP
 	call_if_eq VAR_RESULT, FALSE, Route110_TrickHouseEnd_EventScript_BagFull
 	msgbox Route110_TrickHouseEnd_Text_MakeNewTricksToStumpYou, MSGBOX_DEFAULT
 	closemessage
@@ -70,7 +70,11 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle1::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle2::
-	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMaze, MSGBOX_DEFAULT
+	trainerbattle_single TRAINER_PATRICK_1, Route110_TrickHouseEnd_Text_AllNightToMakeMaze, Route110_TrickHouseEnd_Text_Patrick1_Defeated, Route110_TrickHouseEnd_EventScript_Puzzle2Continue, NO_MUSIC
+	release
+	end
+
+Route110_TrickHouseEnd_EventScript_Puzzle2Continue::
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
 	giveitem ITEM_TIMER_BALL
@@ -263,7 +267,10 @@ Route110_TrickHouseEnd_Text_AllNightToPlantTrees:
 Route110_TrickHouseEnd_Text_AllNightToMakeMaze:
 	.string "It took me all night to make the maze…\p"
 	.string "You're almost my equal in greatness by\n"
-	.string "one, two, three, four, five places!$"
+	.string "one, two, three, four, five places!\p"
+	.string "Luckily, I have another trick up\n"
+	.string "my sleeve…\p"
+	.string "Surprise! It's a POKéMON battle!$"
 
 Route110_TrickHouseEnd_Text_AllNightToPreparePanels:
 	.string "It took me all night to prepare\n"
@@ -356,3 +363,7 @@ Route110_TrickHouseEnd_Text_YoureIgnoringMe:
 	.string "Now, now! You're ignoring me now?\n"
 	.string "Now that, I consider heartbreaking!$"
 
+Route110_TrickHouseEnd_Text_Patrick1_Defeated:
+	.string "Well done!\p"
+	.string "You're almost my equal in battling by\n"
+	.string "one, two, three, four, places!$"

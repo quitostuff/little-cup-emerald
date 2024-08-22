@@ -7178,37 +7178,49 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         {
         case STAT_HP:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_HP)
-                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_HP + bonus) * multiplier;
+                evIncrease = 40;
+            else if (holdEffect == HOLD_EFFECT_POWER_ITEM)
+                evIncrease = 0;
             else
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_HP * multiplier;
             break;
         case STAT_ATK:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_ATK)
-                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_Attack + bonus) * multiplier;
+                evIncrease = 40;
+            else if (holdEffect == HOLD_EFFECT_POWER_ITEM)
+                evIncrease = 0;
             else
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Attack * multiplier;
             break;
         case STAT_DEF:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_DEF)
-                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_Defense + bonus) * multiplier;
+                evIncrease = 40;
+            else if (holdEffect == HOLD_EFFECT_POWER_ITEM)
+                evIncrease = 0;
             else
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Defense * multiplier;
             break;
         case STAT_SPEED:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_SPEED)
-                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_Speed + bonus) * multiplier;
+                evIncrease = 40;
+            else if (holdEffect == HOLD_EFFECT_POWER_ITEM)
+                evIncrease = 0;
             else
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Speed * multiplier;
             break;
         case STAT_SPATK:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_SPATK)
-                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_SpAttack + bonus) * multiplier;
+                evIncrease = 40;
+            else if (holdEffect == HOLD_EFFECT_POWER_ITEM)
+                evIncrease = 0;
             else
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_SpAttack * multiplier;
             break;
         case STAT_SPDEF:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_SPDEF)
-                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_SpDefense + bonus) * multiplier;
+                evIncrease = 40;
+            else if (holdEffect == HOLD_EFFECT_POWER_ITEM)
+                evIncrease = 0;
             else
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_SpDefense * multiplier;
             break;
@@ -7602,6 +7614,8 @@ bool32 IsSpeciesInHoennDex(u16 species)
         return TRUE;
 }
 
+#include "constants/opponents.h"
+
 u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE_GROUDON)
@@ -7640,6 +7654,8 @@ u16 GetBattleBGM(void)
                 return MUS_VS_RIVAL;
             if (!StringCompare(gTrainers[gTrainerBattleOpponent_A].trainerName, gText_BattleWallyName))
                 return MUS_VS_TRAINER;
+            if (gTrainerBattleOpponent_A == TRAINER_STEVEN || TRAINER_STEVEN_VR)
+                return MUS_VS_FRONTIER_BRAIN;       // LET ME COOK
             return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;

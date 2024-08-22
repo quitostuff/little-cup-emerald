@@ -235,3 +235,77 @@ MoveTutor_Text_ExplosionTaught:
 	.string "to ignite my own EXPLOSION…\p"
 	.string "Maybe it's because deep down,\n"
 	.string "I would rather stay here…$"
+
+MoveTutor_Text_SnoreTeach:
+	.string "Our teacher's lectures are so boring!\p"
+	.string "I feel like I'm gonna fall\n"
+	.string "asleep at any point now.\p"
+	.string "Then I start to SNORE and then\n"
+	.string "our teacher wakes me up.\p"
+	.string "I could give you a demonstration\n"
+	.string "of what it's like to SNORE\l"
+	.string "in the middle of a lecture.$"
+
+MoveTutor_Text_SnoreDeclined:
+	.string "That's fair. I shouldn't be\n"
+	.string "sleeping in class anyways…$"
+
+MoveTutor_Text_SnoreWhichMon:
+	.string "Okay, which POKéMON would like to\n"
+	.string "learn how to SNORE?$"
+
+MoveTutor_Text_SnoreTaught:
+	.string "I'm gonna go back to sleep now.\n"
+	.string "Please don't wake me up\l"
+	.string "until class is over…$"
+
+MoveTutor_Text_MudSlapTeach:
+	.string "I like to make sand castles\n"
+	.string "in the sand.\p"
+	.string "You mix the sand with the water\n"
+	.string "from the beach and the castle\l"
+	.string "becomes nice and strong.\p"
+	.string "I wish I could do the same\n"
+	.string "with the dirt at home, but\l"
+	.string "my mom won't let me.\p"
+	.string "Do you wanna learn how to\n"
+	.string "MUD SLAP? It's not sand,\l"
+	.string "but mud is still strong, right?$"
+
+MoveTutor_Text_MudSlapDeclined:
+	.string "Oh well, time to get back\n"
+	.string "to building this sand castle.$"
+
+MoveTutor_Text_MudSlapWhichMon:
+	.string "Who wants to play dirty\n"
+	.string "in the mud?$"
+
+MoveTutor_Text_MudSlapTaught:
+	.string "Now you can build a mud castle\n"
+	.string "just like this sand castle!$"
+
+MoveTutor_Text_DefenseCurlTeach:
+	.string "Oh no…\n"
+	.string "How did I end up getting lost\l"
+	.string "in this cave?\p"
+	.string "It's so dark in here and I feel\n"
+	.string "so DEFENSEless right now.\p"
+	.string "Maybe if I CURL up into a ball,\n"
+	.string "maybe the wild POKéMON will think\l"
+	.string "that I'm a rock and ignore me?\p"
+	.string "Eek!\n"
+	.string "W-what are you doing?\l"
+	.string "Are you trying to copy my\l"
+	.string "DEFENSE CURL technique?$"
+
+MoveTutor_Text_DefenseCurlDeclined:
+	.string "Well that would be rude to\n"
+	.string "copy what I'm doing.$"
+
+MoveTutor_Text_DefenseCurlWhichMon:
+	.string "Oh, it's your POKéMON that's\n"
+	.string "trying to curl up like me…$"
+
+MoveTutor_Text_DefenseCurlTaught:
+	.string "Can you at least show me the\n"
+	.string "way out of this cave? Thanks.$"

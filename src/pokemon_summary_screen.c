@@ -315,8 +315,10 @@ static void DestroyMoveSelectorSprites(u8);
 static void SetMainMoveSelectorColor(u8);
 static void KeepMoveSelectorVisible(u8);
 static void SummaryScreen_DestroyAnimDelayTask(void);
+static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n);
 static void BufferIvOrEvStats(u8 mode);     //EV and IV display code by Buffel Saft
-//https://github.com/BuffelSaft/pokeemerald/pull/240/commits/5a7cdfce640982f7b10d5d9383ec722c036227c3
+//https://github.com/pret/pokeemerald/wiki/Colored-stats-by-nature-in-summary-screen
+//https://github.com/pret/pokeemerald/wiki/Show-IVs-EVs-in-Summary-Screen
 
 // const rom data
 #include "data/text/move_descriptions.h"
@@ -1605,47 +1607,75 @@ static void CloseSummaryScreen(u8 taskId)
     }
 }
 
-static void ChangeSummaryState (s16 *taskData, u8 taskId)
+#define currentStat  taskData[3]
+#define STAT_STATS  0
+#define STAT_IVS    1
+#define STAT_EVS    2
+
+#define STATS_CORD_X    44
+#define STATS_CORD_Y    102
+
+#define STATS_STATS_BLOCK   169
+#define EVS_STATS_BLOCK     218
+#define IVS_STATS_BLOCK     (EVS_STATS_BLOCK + 3)
+#define STATS_BLANK_BLOCK   1241
+
+// Update skills page tilemap
+static void ChangeSummaryState(s16 *taskData, u8 taskId)
 {
-    switch (taskData[3])
+    FillBgTilemapBufferRect(1, STATS_BLANK_BLOCK, STATS_CORD_X + 3, STATS_CORD_Y, 1, 1, 2);
+    FillBgTilemapBufferRect(1, STATS_BLANK_BLOCK, STATS_CORD_X + 4, STATS_CORD_Y, 1, 1, 2);
+    FillBgTilemapBufferRect(1, STATS_BLANK_BLOCK, STATS_CORD_X + 5, STATS_CORD_Y, 1, 1, 2);
+    switch (currentStat)
     {
-        case 0:
-            taskData[3] = 1;
+        case STAT_STATS:
+            FillBgTilemapBufferRect(1, IVS_STATS_BLOCK, STATS_CORD_X, STATS_CORD_Y, 1, 1, 2);
+            FillBgTilemapBufferRect(1, IVS_STATS_BLOCK + 1, STATS_CORD_X + 1, STATS_CORD_Y, 1, 1, 2);
+            FillBgTilemapBufferRect(1, IVS_STATS_BLOCK + 2, STATS_CORD_X + 2, STATS_CORD_Y, 1, 1, 2);
+            taskData[3] = STAT_IVS;
             break;
-        case 1:
-            taskData[3] = 2;
+        case STAT_IVS:
+            FillBgTilemapBufferRect(1, EVS_STATS_BLOCK, STATS_CORD_X, STATS_CORD_Y, 1, 1, 2);
+            FillBgTilemapBufferRect(1, EVS_STATS_BLOCK + 1, STATS_CORD_X + 1, STATS_CORD_Y, 1, 1, 2);
+            FillBgTilemapBufferRect(1, EVS_STATS_BLOCK + 2, STATS_CORD_X + 2, STATS_CORD_Y, 1, 1, 2);
+            taskData[3] = STAT_EVS;
             break;
-        case 2:
-            taskData[3] = 0;
+        case STAT_EVS:
+            FillBgTilemapBufferRect(1, STATS_STATS_BLOCK, STATS_CORD_X, STATS_CORD_Y, 1, 1, 2);
+            FillBgTilemapBufferRect(1, STATS_STATS_BLOCK + 1, STATS_CORD_X + 1, STATS_CORD_Y, 1, 1, 2);
+            FillBgTilemapBufferRect(1, STATS_STATS_BLOCK + 2, STATS_CORD_X + 2, STATS_CORD_Y, 1, 1, 2);
+            FillBgTilemapBufferRect(1, STATS_STATS_BLOCK + 3, STATS_CORD_X + 3, STATS_CORD_Y, 1, 1, 2);
+            taskData[3] = STAT_STATS;
             break;
     }
+    CopyBgTilemapBufferToVram(1);
     gTasks[taskId].func = Task_HandleInput;
 }
 
 static void Task_HandleInput(u8 taskId)
 {
-    s16 *data = gTasks[taskId].data;
+    s16 *taskData = gTasks[taskId].data;
 
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE && !gPaletteFade.active)
     {
         if (JOY_NEW(DPAD_UP))
         {
-            data[3] = 0;
+            currentStat = STAT_STATS;
             ChangeSummaryPokemon(taskId, -1);
         }
         else if (JOY_NEW(DPAD_DOWN))
         {
-            data[3] = 0;
+            currentStat = STAT_STATS;
             ChangeSummaryPokemon(taskId, 1);
         }
         else if ((JOY_NEW(DPAD_LEFT)) || GetLRKeysPressed() == MENU_L_PRESSED)
         {
-            data[3] = 0;
+            currentStat = STAT_STATS;
             ChangePage(taskId, -1);
         }
         else if ((JOY_NEW(DPAD_RIGHT)) || GetLRKeysPressed() == MENU_R_PRESSED)
         {
-            data[3] = 0;
+            currentStat = STAT_STATS;
             ChangePage(taskId, 1);
         }
         else if (JOY_NEW(A_BUTTON))
@@ -1653,8 +1683,9 @@ static void Task_HandleInput(u8 taskId)
             if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
             {
                 // Cycle through IVs/EVs/stats on pressing A
-                ChangeSummaryState(data, taskId);
-                BufferIvOrEvStats(data[3]);
+                PlaySE(SE_SELECT);
+                ChangeSummaryState(taskData, taskId);
+                BufferIvOrEvStats(currentStat);
             }
             else if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
             {
@@ -2989,6 +3020,9 @@ static void PutPageWindowTilemaps(u8 page)
 {
     u8 i;
 
+    LZDecompressWram(gSummaryPage_Skills_Tilemap, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][1]);
+    CopyBgTilemapBufferToVram(1);
+
     ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_INFO_TITLE);
     ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_TITLE);
     ClearWindowTilemap(PSS_LABEL_WINDOW_BATTLE_MOVES_TITLE);
@@ -3054,9 +3088,11 @@ static void ClearPageWindowTilemaps(u8 page)
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_INFO_TYPE);
         break;
     case PSS_PAGE_SKILLS:
+        ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_SWITCH);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP);
+        CopyBgTilemapBufferToVram(1);
         break;
     case PSS_PAGE_BATTLE_MOVES:
         if (sMonSummaryScreen->mode == SUMMARY_MODE_SELECT_MOVE)
@@ -3498,12 +3534,14 @@ static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n)
     static const u8 sTextNatureUp[] = _("{COLOR}{05}");
     static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
     u8 *txtPtr;
+
     if (natureMod == 0)
         txtPtr = StringCopy(dst, sTextNatureNeutral);
     else if (natureMod > 0)
         txtPtr = StringCopy(dst, sTextNatureUp);
     else
         txtPtr = StringCopy(dst, sTextNatureDown);
+
     ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
 }
@@ -3588,21 +3626,16 @@ static void BufferIvOrEvStats(u8 mode)
 
 static void BufferLeftColumnStats(void)
 {
-    u8 *currentHPString = Alloc(8);
-    u8 *maxHPString = Alloc(8);
-    u8 *attackString = Alloc(8);
-    u8 *defenseString = Alloc(8);
+    u8 *currentHPString = Alloc(20);
+    u8 *maxHPString = Alloc(20);
+    u8 *attackString = Alloc(20);
+    u8 *defenseString = Alloc(20);
+    const s8 *natureMod = gNatureStatTable[sMonSummaryScreen->summary.nature];
 
-    ConvertIntToDecimalStringN(currentHPString, sMonSummaryScreen->summary.currentHP, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(maxHPString, sMonSummaryScreen->summary.maxHP, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(attackString, sMonSummaryScreen->summary.atk, STR_CONV_MODE_RIGHT_ALIGN, 7);
-    ConvertIntToDecimalStringN(defenseString, sMonSummaryScreen->summary.def, STR_CONV_MODE_RIGHT_ALIGN, 7);
-
-    DynamicPlaceholderTextUtil_Reset();
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, currentHPString);
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, maxHPString);
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, attackString);
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(3, defenseString);
+    BufferStat(currentHPString, 0, sMonSummaryScreen->summary.currentHP, 0, 3);
+    BufferStat(maxHPString, 0, sMonSummaryScreen->summary.maxHP, 1, 3);
+    BufferStat(attackString, natureMod[STAT_ATK - 1], sMonSummaryScreen->summary.atk, 2, 7);
+    BufferStat(defenseString, natureMod[STAT_DEF - 1], sMonSummaryScreen->summary.def, 3, 7);
     DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsLeftColumnLayout);
 
     Free(currentHPString);
@@ -3618,14 +3651,22 @@ static void PrintLeftColumnStats(void)
 
 static void BufferRightColumnStats(void)
 {
-    ConvertIntToDecimalStringN(gStringVar1, sMonSummaryScreen->summary.spatk, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(gStringVar2, sMonSummaryScreen->summary.spdef, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(gStringVar3, sMonSummaryScreen->summary.speed, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    const s8 *natureMod = gNatureStatTable[sMonSummaryScreen->summary.nature];
+
+    // Reset to STATS graphics
+    FillBgTilemapBufferRect(1, STATS_BLANK_BLOCK, STATS_CORD_X + 3, STATS_CORD_Y, 1, 1, 2);
+    FillBgTilemapBufferRect(1, STATS_BLANK_BLOCK, STATS_CORD_X + 4, STATS_CORD_Y, 1, 1, 2);
+    FillBgTilemapBufferRect(1, STATS_BLANK_BLOCK, STATS_CORD_X + 5, STATS_CORD_Y, 1, 1, 2);
+    FillBgTilemapBufferRect(1, STATS_STATS_BLOCK, STATS_CORD_X, STATS_CORD_Y, 1, 1, 2);
+    FillBgTilemapBufferRect(1, STATS_STATS_BLOCK + 1, STATS_CORD_X + 1, STATS_CORD_Y, 1, 1, 2);
+    FillBgTilemapBufferRect(1, STATS_STATS_BLOCK + 2, STATS_CORD_X + 2, STATS_CORD_Y, 1, 1, 2);
+    FillBgTilemapBufferRect(1, STATS_STATS_BLOCK + 3, STATS_CORD_X + 3, STATS_CORD_Y, 1, 1, 2);
+    CopyBgTilemapBufferToVram(1);
 
     DynamicPlaceholderTextUtil_Reset();
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar2);
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, gStringVar3);
+    BufferStat(gStringVar1, natureMod[STAT_SPATK - 1], sMonSummaryScreen->summary.spatk, 0, 3);
+    BufferStat(gStringVar2, natureMod[STAT_SPDEF - 1], sMonSummaryScreen->summary.spdef, 1, 3);
+    BufferStat(gStringVar3, natureMod[STAT_SPEED - 1], sMonSummaryScreen->summary.speed, 2, 3);
     DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
 }
 

@@ -4205,3 +4205,53 @@ u8 Script_TryGainNewFanFromCounter(void)
 {
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
 }
+
+//source: https://github.com/LOuroboros/pokeemerald/commit/0d418ab3a1070e8f36c5ba3513bba8549f0571a8
+
+// Sets the HP IVs of the Pokémon in gSpecialVar_0x8004 according to the current value of var 0x8000 
+void SetHpIVs(void)
+{
+    u8 HpIV = gSpecialVar_0x8000;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &HpIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+// Sets the Atk IVs of the Pokémon in gSpecialVar_0x8004 according to the current value of var 0x8001
+void SetAtkIVs(void)
+{
+    u8 AtkIV = gSpecialVar_0x8001;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &AtkIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+// Sets the Def IVs of the Pokémon in gSpecialVar_0x8004 according to the current value of var 0x8002
+void SetDefIVs(void)
+{
+    u8 DefIV = gSpecialVar_0x8002;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &DefIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+// Sets the Spd IVs of the Pokémon in gSpecialVar_0x8004 according to the current value of var 0x8003
+void SetSpdIVs(void)
+{
+    u8 SpdIV = gSpecialVar_0x8003;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &SpdIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+// Sets the SpAtk IVs of the Pokémon in gSpecialVar_0x8004 according to the current value of var 0x8005
+void SetSpAtkIVs(void)
+{
+    u8 SpAtkIV = gSpecialVar_0x8005;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &SpAtkIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+// Sets the SpDef IVs of the Pokémon in gSpecialVar_0x8004 according to the current value of var 0x8006
+void SetSpDefIVs(void)
+{
+    u8 SpDefIV = gSpecialVar_0x8006;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &SpDefIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}

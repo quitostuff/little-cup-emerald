@@ -813,10 +813,10 @@
 #define TRAINER_NOLAND                      809
 #define TRAINER_LUCY                        810
 #define TRAINER_BRANDON                     811
-#define TRAINER_ANDRES_2                    812
-#define TRAINER_ANDRES_3                    813
-#define TRAINER_ANDRES_4                    814
-#define TRAINER_ANDRES_5                    815
+#define TRAINER_PATRICK_1                   812
+#define TRAINER_PATRICK_2                   813
+#define TRAINER_PATRICK_3                   814
+#define TRAINER_PATRICK_4                   815
 #define TRAINER_CORY_2                      816
 #define TRAINER_CORY_3                      817
 #define TRAINER_CORY_4                      818
@@ -836,7 +836,7 @@
 #define TRAINER_FERNANDO_2                  832
 #define TRAINER_FERNANDO_3                  833
 #define TRAINER_FERNANDO_4                  834
-#define TRAINER_FERNANDO_5                  835
+#define TRAINER_STEVEN_VR                   835
 #define TRAINER_SAWYER_2                    836
 #define TRAINER_SAWYER_3                    837
 #define TRAINER_SAWYER_4                    838
