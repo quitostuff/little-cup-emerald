@@ -493,3 +493,63 @@ BattleFrontier_Lounge7_Text_FirePunchDesc::
 	.string "A fiery punch\n"
 	.string "that may burn\n"
 	.string "the foe.$"
+
+BattleFrontier_Lounge7_Text_NightmareDesc::
+    .string "Inflicts 1/4 dmg\n"
+    .string "on sleeping foe\n"
+	.string "every turn.$"
+
+BattleFrontier_Lounge7_Text_SkyAttackDesc::
+	.string "Searches out weak\n"
+	.string "spots, then strikes\n"
+	.string "the next turn.$"
+
+BattleFrontier_Lounge7_Text_SwaggerDesc::
+	.string "Confuses the foe,\n"
+    .string "but also sharply\n"
+    .string "raises Attack.$"
+
+BattleFrontier_Lounge7_Text_RolloutDesc::
+    .string "An attack lasting\n"
+    .string "5 turns with\n"
+	.string "rising intensity.$"
+
+BattleFrontier_Lounge7_Text_FuryCutterDesc::
+    .string "An attack that\n"
+    .string "intensifies on each\n"
+	.string "successive hit.$"
+
+BattleFrontier_Lounge7_Text_MetronomeDesc::
+    .string "Waggles a finger to\n"
+    .string "use any Pokémon\n"
+	.string "move at random.$"
+
+BattleFrontier_Lounge7_Text_MimicDesc::
+    .string "Mimics the target\n"
+    .string "and copies its\n"
+	.string "special ability.$"
+
+BattleFrontier_Lounge7_Text_SleepTalkDesc::
+    .string "Uses an available\n"
+    .string "move randomly\n"
+	.string "while asleep.$"
+
+BattleFrontier_Lounge7_Text_SubstituteDesc::
+    .string "Creates a Substitute\n"
+    .string "for itself before\n"
+	.string "switching out.$"
+
+BattleFrontier_Lounge7_Text_DynamicPunchDesc::
+    .string "Powerful and sure\n"
+    .string "to cause confusion,\n"
+	.string "but inaccurate.$"
+
+BattleFrontier_Lounge7_Text_DoubleEdgeDesc::
+    .string "A life-risking tackle\n"
+    .string "that also hurts\n"
+	.string "the user.$"
+
+BattleFrontier_Lounge7_Text_ExplosionDesc::
+    .string "Inflicts severe damage\n"
+    .string "but makes the\n"
+	.string "user faint.$"

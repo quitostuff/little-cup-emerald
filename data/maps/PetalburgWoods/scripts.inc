@@ -72,6 +72,11 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgWoods_Movement_WatchResearcherLeave
 	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherExitRight
 	waitmovement 0
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PetalburgWoods_Text_RelearnCapUpdate2, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	goto PetalburgWoods_EventScript_RemoveDevonResearcher
 	end
 
@@ -473,4 +478,8 @@ PetalburgWoods_Text_TrainerTipsPP:
 	.string "make moves during battle.\p"
 	.string "If a POKéMON runs out of PP, it must be\n"
 	.string "taken to a POKéMON CENTER.$"
+
+PetalburgWoods_Text_RelearnCapUpdate2:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 15!$"
 

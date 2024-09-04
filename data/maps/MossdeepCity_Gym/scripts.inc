@@ -86,6 +86,11 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox MossdeepCity_Gym_Text_RelearnCapUpdate11, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	release
 	end
 
@@ -646,3 +651,7 @@ MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
 	.string "LIZA: You brought just one POKéMON!\p"
 	.string "TATE: We need you to bring at least…\n"
 	.string "LIZA: Two POKéMON when you come back.$"
+
+MossdeepCity_Gym_Text_RelearnCapUpdate11:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 50!$"

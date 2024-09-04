@@ -236,6 +236,58 @@ MoveTutor_Text_ExplosionTaught:
 	.string "Maybe it's because deep down,\n"
 	.string "I would rather stay here…$"
 
+PokemonCenter_MoveTutor_Text_TutorGuyIntro:
+	.string "Hi there! I'm the Tutor Guy!\p"
+	.string "I can teach moves from other\n"
+	.string "Move Tutors in the HOENN region\l"
+	.string "as long as you have a HEART SCALE.\p"
+	.string "Oh, but it only works if you've already\n"
+	.string "learned the move from a tutor.\p"
+	.string "Is there a move from a tutor\n"
+	.string "that you would like for me to\l"
+	.string "teach to one of your POKéMON?$"
+
+PokemonCenter_MoveTutor_Text_PickTutorOptions:
+	.string "Which move tutor do you want\n"
+	.string "to learn a move from?$"
+
+PokemonCenter_MoveTutor_Text_TeachWhichMove:
+	.string "Fine, fine, look here!\n"
+	.string "Which move should I teach?$"
+
+PokemonCenter_MoveTutor_Text_MoveWillBe1HeartScale:
+	.string "The move {STR_VAR_1}, is it?\n"
+	.string "That will be one Heart Scale, okay?$"
+
+PokemonCenter_MoveTutor_Text_TeachMoveToWhichMon:
+	.string "Fine, fine, now pick the POKéMON\n"
+	.string "I should teach the move to.$"
+
+PokemonCenter_MoveTutor_Text_TutorGuyUnableToTeachYet:
+	.string "Oh, I can't teach that move just yet.\p"
+	.string "You should learn that technique from\n"
+	.string "someone else before asking me to\l"
+	.string "teach you that move.$"
+
+PokemonCenter_MoveTutor_Text_BeatTrickHouseMan:
+	.string "Oh, I can't teach that move just yet.\p"
+	.string "Perhaps if you complete some of the\n"
+	.string "Trick Master's puzzles, I can teach this\l"
+	.string "technique to you later?\p"
+	.string "Hey, I don't get the correlation\n"
+	.string "between puzzles and moves either.$"
+
+PokemonCenter_MoveTutor_Text_YouDontWantTo:
+	.string "What's that?\n"
+	.string "You don't want to…\p"
+	.string "If you want to see how skilled I am,\n"
+	.string "you come see me anytime!$"
+
+PokemonCenter_MoveTutor_Text_NoHeartScale:
+	.string "Wait a minute, you don't have a\n"
+	.string "Heart Scale on you.\p"
+	.string "Come back later when you have one.$"
+
 MoveTutor_Text_SnoreTeach:
 	.string "Our teacher's lectures are so boring!\p"
 	.string "I feel like I'm gonna fall\n"

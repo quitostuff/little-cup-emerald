@@ -45,6 +45,11 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	setflag FLAG_ENABLE_WINONA_MATCH_CALL
 	setvar VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0
 	setflag FLAG_SCOTT_CALL_FORTREE_GYM
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox FortreeCity_Gym_Text_RelearnCapUpdate9, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	release
 	end
 
@@ -316,3 +321,7 @@ FortreeCity_Gym_Text_WinonaRematchNeedTwoMons:
 	.string "POKéMON with you?\p"
 	.string "Please return with two POKéMON\n"
 	.string "at the very least.$"
+
+FortreeCity_Gym_Text_RelearnCapUpdate9:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 43!$"

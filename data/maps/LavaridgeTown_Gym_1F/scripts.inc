@@ -80,6 +80,11 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_FLANNERY_MATCH_CALL
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox LavaridgeTown_Gym_1F_Text_RelearnCapUpdate7, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	release
 	end
 
@@ -402,3 +407,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 	.string "that can battle?\p"
 	.string "I hate to say this, but when you come\n"
 	.string "see me, bring at least two POKéMON.$"
+
+LavaridgeTown_Gym_1F_Text_RelearnCapUpdate7:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 36!$"

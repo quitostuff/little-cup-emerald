@@ -749,6 +749,18 @@ extern const u8 gText_PsychUp48BP[];
 extern const u8 gText_IcePunch48BP[];
 extern const u8 gText_ThunderPunch48BP[];
 extern const u8 gText_FirePunch48BP[];
+extern const u8 gText_Nightmare[];
+extern const u8 gText_SkyAttack[];
+extern const u8 gText_Swagger[];
+extern const u8 gText_Rollout[];
+extern const u8 gText_FuryCutter[];
+extern const u8 gText_Metronome[];
+extern const u8 gText_Mimic[];
+extern const u8 gText_SleepTalk[];
+extern const u8 gText_Substitute[];
+extern const u8 gText_DynamicPunch[];
+extern const u8 gText_DoubleEdge[];
+extern const u8 gText_Explosion[];
 
 extern const u8 gText_SlateportCity[];
 extern const u8 gText_BattleFrontier[];
@@ -893,6 +905,18 @@ extern const u8 BattleFrontier_Lounge7_Text_PsychUpDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_IcePunchDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_ThunderPunchDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_FirePunchDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_NightmareDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_SkyAttackDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_SwaggerDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_RolloutDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_FuryCutterDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_MetronomeDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_MimicDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_SleepTalkDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_SubstituteDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_DynamicPunchDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_DoubleEdgeDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_ExplosionDesc[];
 
 extern const u8 gText_YourPartnerHasRetired[];
 
@@ -3046,5 +3070,9 @@ extern const u8 gText_Chingling[];
 extern const u8 gText_Budew[];
 extern const u8 gText_Happiny[];
 extern const u8 gText_Mantyke[];
+
+extern const u8 gText_VanillaTutors[];
+extern const u8 gText_AdditionalTutors[];
+extern const u8 gText_TrickHouseTutors[];
 
 #endif // GUARD_STRINGS_H

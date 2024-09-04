@@ -108,6 +108,11 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_WATTSON_MATCH_CALL
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox MauvilleCity_Gym_Text_RelearnCapUpdate5, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	release
 	end
 
@@ -419,3 +424,6 @@ MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
 	.string "Come see me with two or more\n"
 	.string "POKéMON, all right?$"
 
+MauvilleCity_Gym_Text_RelearnCapUpdate5:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 30!$"

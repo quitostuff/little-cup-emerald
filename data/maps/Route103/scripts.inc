@@ -137,6 +137,11 @@ Route103_EventScript_RivalEnd::
 	clearflag FLAG_HIDE_OLDALE_TOWN_RIVAL
 	savebgm MUS_DUMMY
 	fadedefaultbgm
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox Route103_Text_RelearnCapUpdate1, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	releaseall
 	end
 
@@ -342,4 +347,8 @@ Route103_Text_ShortcutToOldale:
 Route103_Text_RouteSign:
 	.string "ROUTE 103\n"
 	.string "{DOWN_ARROW} OLDALE TOWN$"
+
+Route103_Text_RelearnCapUpdate1:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 10!$"
 

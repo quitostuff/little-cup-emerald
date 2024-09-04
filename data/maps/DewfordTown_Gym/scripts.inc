@@ -164,6 +164,11 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	setflag FLAG_ENABLE_BRAWLY_MATCH_CALL
 	setvar VAR_ROXANNE_CALL_STEP_COUNTER, 0
 	setflag FLAG_ENABLE_ROXANNE_FIRST_CALL
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox DewfordTown_Gym_Text_RelearnCapUpdate4, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	release
 	end
 
@@ -457,3 +462,7 @@ DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 	.string "that can battle.\p"
 	.string "I'm sorry, but I'd like you to come back\n"
 	.string "with at least two POKéMON.$"
+
+DewfordTown_Gym_Text_RelearnCapUpdate4:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 25!$"

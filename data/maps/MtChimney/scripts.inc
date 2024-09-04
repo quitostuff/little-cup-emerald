@@ -77,6 +77,11 @@ MtChimney_EventScript_Maxie::
 	clearflag FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO
 	setflag FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO
 	clearflag FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox MtChimney_Text_RelearnCapUpdate6, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	releaseall
 	end
 
@@ -844,3 +849,6 @@ MtChimney_Text_SawyerPostRematch:
 	.string "Actually, it really is hot here.\n"
 	.string "I'm overdressed for these parts.$"
 
+MtChimney_Text_RelearnCapUpdate6:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 33!$"

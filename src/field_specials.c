@@ -2386,6 +2386,27 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_GLOBAL_TUTORS_1:
+    case SCROLL_MULTI_GLOBAL_TUTORS_2:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_GLOBAL_TUTORS_3:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 13;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2546,7 +2567,51 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Underpowered,
         gText_WhenInDanger,
         gText_Exit
-    }
+    },
+    [SCROLL_MULTI_GLOBAL_TUTORS_1] = 
+    {
+        gText_Swagger,
+        gText_Rollout,
+        gText_FuryCutter,
+        gText_Metronome,
+        gText_Mimic,
+        gText_SleepTalk,
+        gText_Substitute,
+        gText_DynamicPunch,
+        gText_DoubleEdge,
+        gText_Explosion,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GLOBAL_TUTORS_2] = 
+    {
+        gText_Snore24BP,
+        gText_MudSlap24BP,
+        gText_DefenseCurl16BP,
+        gText_PsychUp48BP,
+        gText_Swift24BP,
+        gText_IcyWind24BP,
+        gText_Endure48BP,
+        gText_FirePunch48BP,
+        gText_IcePunch48BP,
+        gText_ThunderPunch48BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GLOBAL_TUTORS_3] = 
+    {
+        gText_MegaPunch24BP,
+        gText_MegaKick48BP,
+        gText_SeismicToss24BP,
+        gText_Nightmare,
+        gText_DreamEater24BP,
+        gText_Softboiled16BP,
+        gText_RockSlide48BP,
+        gText_BodySlam48BP,
+        gText_Counter48BP,
+        gText_SkyAttack,
+        gText_ThunderWave48BP,
+        gText_SwordsDance48BP,
+        gText_Exit
+    },
 };
 
 static void Task_ShowScrollableMultichoice(u8 taskId)
@@ -3080,7 +3145,7 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
         .baseBlock = 28,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_GLOBAL_TUTORS_1 || SCROLL_MULTI_GLOBAL_TUTORS_2 || SCROLL_MULTI_GLOBAL_TUTORS_3)
     {
         if (gSpecialVar_0x8006 == 0)
         {
@@ -3123,13 +3188,66 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         gText_Exit,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    static const u8 *const sBattleFrontier_TutorMoveDescriptions3[] =
+    {
+        BattleFrontier_Lounge7_Text_SwaggerDesc,
+        BattleFrontier_Lounge7_Text_RolloutDesc,
+        BattleFrontier_Lounge7_Text_FuryCutterDesc,
+        BattleFrontier_Lounge7_Text_MetronomeDesc,
+        BattleFrontier_Lounge7_Text_MimicDesc,
+        BattleFrontier_Lounge7_Text_SleepTalkDesc,
+        BattleFrontier_Lounge7_Text_SubstituteDesc,
+        BattleFrontier_Lounge7_Text_DynamicPunchDesc,
+        BattleFrontier_Lounge7_Text_DoubleEdgeDesc,
+        BattleFrontier_Lounge7_Text_ExplosionDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sBattleFrontier_TutorMoveDescriptions4[] =
+    {
+        BattleFrontier_Lounge7_Text_SnoreDesc,
+        BattleFrontier_Lounge7_Text_MudSlapDesc,
+        BattleFrontier_Lounge7_Text_DefenseCurlDesc,
+        BattleFrontier_Lounge7_Text_PsychUpDesc,
+        BattleFrontier_Lounge7_Text_SwiftDesc,
+        BattleFrontier_Lounge7_Text_IcyWindDesc,
+        BattleFrontier_Lounge7_Text_EndureDesc,
+        BattleFrontier_Lounge7_Text_FirePunchDesc,
+        BattleFrontier_Lounge7_Text_IcePunchDesc,
+        BattleFrontier_Lounge7_Text_ThunderPunchDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sBattleFrontier_TutorMoveDescriptions5[] =
+    {
+        BattleFrontier_Lounge7_Text_MegaPunchDesc,
+        BattleFrontier_Lounge7_Text_MegaKickDesc,
+        BattleFrontier_Lounge7_Text_SeismicTossDesc,
+        BattleFrontier_Lounge7_Text_NightmareDesc,
+        BattleFrontier_Lounge7_Text_DreamEaterDesc,
+        BattleFrontier_Lounge7_Text_SoftboiledDesc,
+        BattleFrontier_Lounge7_Text_RockSlideDesc,
+        BattleFrontier_Lounge7_Text_BodySlamDesc,
+        BattleFrontier_Lounge7_Text_CounterDesc,
+        BattleFrontier_Lounge7_Text_SkyAttackDesc,
+        BattleFrontier_Lounge7_Text_ThunderWaveDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        gText_Exit,
+    };
+
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_GLOBAL_TUTORS_1 || SCROLL_MULTI_GLOBAL_TUTORS_2 || SCROLL_MULTI_GLOBAL_TUTORS_3)
     {
         FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
-        else
+        else if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_GLOBAL_TUTORS_1)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions3[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_GLOBAL_TUTORS_2)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions4[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_GLOBAL_TUTORS_3)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions5[selection], 0, 1, 0, NULL);
     }
 }
 

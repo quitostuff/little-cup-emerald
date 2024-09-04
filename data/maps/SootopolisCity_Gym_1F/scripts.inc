@@ -112,6 +112,11 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_JUAN_MATCH_CALL
+	delay 30
+	playfanfare MUS_OBTAIN_BADGE
+	msgbox SootopolisCity_Gym_1F_Text_RelearnCapUpdate12, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	release
 	end
 
@@ -316,4 +321,8 @@ SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 	.string "You have with you but one POKéMON.\p"
 	.string "I wish that you would return with\n"
 	.string "two, perhaps more, POKéMON, please.$"
+
+SootopolisCity_Gym_1F_Text_RelearnCapUpdate12:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now removed!$"
 

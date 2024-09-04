@@ -793,6 +793,14 @@ static const struct MenuAction MultichoiceList_SinnohBabies[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_WhichTutorSelect[] = 
+{
+    {gText_VanillaTutors},
+    {gText_AdditionalTutors},
+    {gText_TrickHouseTutors},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -922,6 +930,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BOTTLE_CAP_STATS]           = MULTICHOICE(MultichoiceList_BottleCapStats),
     [MULTI_SINNOH_BABIES]              = MULTICHOICE(MultichoiceList_SinnohBabies),
+    [MULTI_WHICH_TUTOR_SELECT]         = MULTICHOICE(MultichoiceList_WhichTutorSelect),
 };
 
 const u8 *const gStdStrings[] =

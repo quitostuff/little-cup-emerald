@@ -25,6 +25,11 @@ PetalburgCity_WallysHouse_EventScript_GiveHMSurf::
 	setflag FLAG_RECEIVED_HM_SURF
 	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_CITY_STATE, 5
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PetalburgCity_WallysHouse_Text_RelearnCapUpdate8, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	releaseall
 	end
 
@@ -134,4 +139,8 @@ PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling:
 	.string "he's surprisingly strong-willed.\p"
 	.string "I'm sure that he'll come back safe\n"
 	.string "and sound one day!$"
+
+PetalburgCity_WallysHouse_Text_RelearnCapUpdate8:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 40!$"
 

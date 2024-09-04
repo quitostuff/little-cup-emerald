@@ -78,6 +78,11 @@ MagmaHideout_4F_EventScript_Maxie::
 	removeobject LOCALID_TABITHA
 	setflag FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS
 	fadescreen FADE_FROM_BLACK
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox MagmaHideout_4F_Text_RelearnCapUpdate10, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	releaseall
 	end
 
@@ -230,3 +235,7 @@ MagmaHideout_4F_Text_MaxieImGoingAfterGroudon:
 	.string "any need for this blasted volcano.\p"
 	.string "I am going after GROUDON, so this\n"
 	.string "is where we part!$"
+
+MagmaHideout_4F_Text_RelearnCapUpdate10:
+	.string "The Level Cap for the\n"
+	.string "Move Reminder is now Level 46!$"

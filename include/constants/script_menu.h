@@ -124,6 +124,7 @@
 #define MULTI_TAG_MATCH_TYPE               113
 #define MULTI_BOTTLE_CAP_STATS             114
 #define MULTI_SINNOH_BABIES                115
+#define MULTI_WHICH_TUTOR_SELECT           116
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

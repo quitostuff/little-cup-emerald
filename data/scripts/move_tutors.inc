@@ -258,6 +258,426 @@ MoveTutor_EventScript_ExplosionTaught::
 	release
 	end
 
+PokemonCenter_MoveTutor_EventScript_NewAdditions::
+	lock
+	faceplayer
+	msgbox PokemonCenter_MoveTutor_Text_TutorGuyIntro, MSGBOX_DEFAULT
+	goto PokemonCenter_MoveTutor_EventScript_PickTutorSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_PickTutorSelection::
+	message PokemonCenter_MoveTutor_Text_PickTutorOptions
+	waitmessage
+	multichoicedefault 15, 0, MULTI_WHICH_TUTOR_SELECT, 0, FALSE
+	switch VAR_RESULT
+	case 0, PokemonCenter_MoveTutor_EventScript_ChooseVanillaTutorMove
+	case 1, PokemonCenter_MoveTutor_EventScript_ChooseAdditionalTutorMove
+	case 2, PokemonCenter_MoveTutor_EventScript_ChooseHouseTutorMove
+	case MULTI_B_PRESSED, PokemonCenter_MoveTutor_EventScript_Declined
+	goto PokemonCenter_MoveTutor_EventScript_Declined
+	end
+
+PokemonCenter_MoveTutor_EventScript_ChooseVanillaTutorMove::
+	message PokemonCenter_MoveTutor_Text_TeachWhichMove
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 0
+	setvar VAR_0x8004, SCROLL_MULTI_GLOBAL_TUTORS_1
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, PokemonCenter_MoveTutor_EventScript_Swagger
+	case 1, PokemonCenter_MoveTutor_EventScript_Rollout
+	case 2, PokemonCenter_MoveTutor_EventScript_FuryCutter
+	case 3, PokemonCenter_MoveTutor_EventScript_Metronome
+	case 4, PokemonCenter_MoveTutor_EventScript_Mimic
+	case 5, PokemonCenter_MoveTutor_EventScript_SleepTalk
+	case 6, PokemonCenter_MoveTutor_EventScript_Substitute
+	case 7, PokemonCenter_MoveTutor_EventScript_DynamicPunch
+	case 8, PokemonCenter_MoveTutor_EventScript_DoubleEdge
+	case 9, PokemonCenter_MoveTutor_EventScript_Explosion
+	case 10, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	end
+
+PokemonCenter_MoveTutor_EventScript_DifferentVanillaTutorMove::
+	message PokemonCenter_MoveTutor_Text_TeachWhichMove
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 0
+	setvar VAR_0x8004, SCROLL_MULTI_GLOBAL_TUTORS_1
+	setvar VAR_0x8006, 1
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, PokemonCenter_MoveTutor_EventScript_Swagger
+	case 1, PokemonCenter_MoveTutor_EventScript_Rollout
+	case 2, PokemonCenter_MoveTutor_EventScript_FuryCutter
+	case 3, PokemonCenter_MoveTutor_EventScript_Metronome
+	case 4, PokemonCenter_MoveTutor_EventScript_Mimic
+	case 5, PokemonCenter_MoveTutor_EventScript_SleepTalk
+	case 6, PokemonCenter_MoveTutor_EventScript_Substitute
+	case 7, PokemonCenter_MoveTutor_EventScript_DynamicPunch
+	case 8, PokemonCenter_MoveTutor_EventScript_DoubleEdge
+	case 9, PokemonCenter_MoveTutor_EventScript_Explosion
+	case 10, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	end
+
+PokemonCenter_MoveTutor_EventScript_ChooseAdditionalTutorMove::
+	message PokemonCenter_MoveTutor_Text_TeachWhichMove
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 1
+	setvar VAR_0x8004, SCROLL_MULTI_GLOBAL_TUTORS_2
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, PokemonCenter_MoveTutor_EventScript_Snore
+	case 1, PokemonCenter_MoveTutor_EventScript_MudSlap
+	case 2, PokemonCenter_MoveTutor_EventScript_DefenseCurl
+	case 3, PokemonCenter_MoveTutor_EventScript_PsychUp
+	case 4, PokemonCenter_MoveTutor_EventScript_Swift
+	case 5, PokemonCenter_MoveTutor_EventScript_IcyWind
+	case 6, PokemonCenter_MoveTutor_EventScript_Endure
+	case 7, PokemonCenter_MoveTutor_EventScript_FirePunch
+	case 8, PokemonCenter_MoveTutor_EventScript_IcePunch
+	case 9, PokemonCenter_MoveTutor_EventScript_ThunderPunch
+	case 10, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	end
+
+PokemonCenter_MoveTutor_EventScript_DifferentAdditionalTutorMove::
+	message PokemonCenter_MoveTutor_Text_TeachWhichMove
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 1
+	setvar VAR_0x8004, SCROLL_MULTI_GLOBAL_TUTORS_2
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, PokemonCenter_MoveTutor_EventScript_Snore
+	case 1, PokemonCenter_MoveTutor_EventScript_MudSlap
+	case 2, PokemonCenter_MoveTutor_EventScript_DefenseCurl
+	case 3, PokemonCenter_MoveTutor_EventScript_PsychUp
+	case 4, PokemonCenter_MoveTutor_EventScript_Swift
+	case 5, PokemonCenter_MoveTutor_EventScript_IcyWind
+	case 6, PokemonCenter_MoveTutor_EventScript_Endure
+	case 7, PokemonCenter_MoveTutor_EventScript_FirePunch
+	case 8, PokemonCenter_MoveTutor_EventScript_IcePunch
+	case 9, PokemonCenter_MoveTutor_EventScript_ThunderPunch
+	case 10, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	end
+
+PokemonCenter_MoveTutor_EventScript_ChooseHouseTutorMove::
+	message PokemonCenter_MoveTutor_Text_TeachWhichMove
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 2
+	setvar VAR_0x8004, SCROLL_MULTI_GLOBAL_TUTORS_3
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, PokemonCenter_MoveTutor_EventScript_MegaPunch
+	case 1, PokemonCenter_MoveTutor_EventScript_MegaKick
+	case 2, PokemonCenter_MoveTutor_EventScript_SeismicToss
+	case 3, PokemonCenter_MoveTutor_EventScript_Nightmare
+	case 4, PokemonCenter_MoveTutor_EventScript_DreamEater
+	case 5, PokemonCenter_MoveTutor_EventScript_Softboiled
+	case 6, PokemonCenter_MoveTutor_EventScript_RockSlide
+	case 7, PokemonCenter_MoveTutor_EventScript_BodySlam
+	case 8, PokemonCenter_MoveTutor_EventScript_Counter
+	case 9, PokemonCenter_MoveTutor_EventScript_SkyAttack
+	case 10, PokemonCenter_MoveTutor_EventScript_ThunderWave
+	case 11, PokemonCenter_MoveTutor_EventScript_SwordsDance
+	case 12, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	end
+
+PokemonCenter_MoveTutor_EventScript_DifferentHouseTutorMove::
+	message PokemonCenter_MoveTutor_Text_TeachWhichMove
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 2
+	setvar VAR_0x8004, SCROLL_MULTI_GLOBAL_TUTORS_3
+	setvar VAR_0x8006, 1
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, PokemonCenter_MoveTutor_EventScript_MegaPunch
+	case 1, PokemonCenter_MoveTutor_EventScript_MegaKick
+	case 2, PokemonCenter_MoveTutor_EventScript_SeismicToss
+	case 3, PokemonCenter_MoveTutor_EventScript_Nightmare
+	case 4, PokemonCenter_MoveTutor_EventScript_DreamEater
+	case 5, PokemonCenter_MoveTutor_EventScript_Softboiled
+	case 6, PokemonCenter_MoveTutor_EventScript_RockSlide
+	case 7, PokemonCenter_MoveTutor_EventScript_BodySlam
+	case 8, PokemonCenter_MoveTutor_EventScript_Counter
+	case 9, PokemonCenter_MoveTutor_EventScript_SkyAttack
+	case 10, PokemonCenter_MoveTutor_EventScript_ThunderWave
+	case 11, PokemonCenter_MoveTutor_EventScript_SwordsDance
+	case 12, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect
+	end
+
+PokemonCenter_MoveTutor_EventScript_Swagger::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_SWAGGER, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_SWAGGER
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Rollout::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_ROLLOUT
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_FuryCutter::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_FURY_CUTTER
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Metronome::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_METRONOME, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_METRONOME
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Mimic::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_MIMIC, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_MIMIC
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_SleepTalk::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_SLEEP_TALK, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_SLEEP_TALK
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Substitute::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_SUBSTITUTE
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_DynamicPunch::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_DYNAMIC_PUNCH
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_DoubleEdge::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_DOUBLE_EDGE
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Explosion::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_EXPLOSION, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_EXPLOSION
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Snore::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_SNORE, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_SNORE
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_MudSlap::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_MUD_SLAP, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_MUD_SLAP
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_DefenseCurl::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_DEFENSE_CURL, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_DEFENSE_CURL
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_PsychUp::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_PSYCH_UP, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_PSYCH_UP
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Swift::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_SWIFT, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_SWIFT
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_IcyWind::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_ICY_WIND, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_ICY_WIND
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Endure::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_ENDURE, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_ENDURE
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_FirePunch::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_FIRE_PUNCH, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_FIRE_PUNCH
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_IcePunch::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_ICE_PUNCH, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_ICE_PUNCH
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_ThunderPunch::
+	goto_if_unset FLAG_MOVE_TUTOR_TAUGHT_THUNDER_PUNCH, PokemonCenter_MoveTutor_EventScript_ComeBackLater
+	setvar VAR_0x8005, MOVE_THUNDER_PUNCH
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_MegaPunch::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 1, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_MEGA_PUNCH
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_MegaKick::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 1, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_MEGA_KICK
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_SeismicToss::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 2, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_SEISMIC_TOSS
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Nightmare::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 2, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_NIGHTMARE
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_DreamEater::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 3, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_DREAM_EATER
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Softboiled::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 3, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_SOFT_BOILED
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_RockSlide::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 4, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_ROCK_SLIDE
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_BodySlam::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 4, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_BODY_SLAM
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Counter::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 5, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_COUNTER
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_SkyAttack::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 5, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_SKY_ATTACK
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_ThunderWave::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 6, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_THUNDER_WAVE
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_SwordsDance::
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 6, PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls
+	setvar VAR_0x8005, MOVE_SWORDS_DANCE
+	goto PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection
+	end
+
+PokemonCenter_MoveTutor_EventScript_Declined::
+	msgbox PokemonCenter_MoveTutor_Text_YouDontWantTo, MSGBOX_DEFAULT
+	release
+	end
+
+PokemonCenter_MoveTutor_EventScript_ExitTutorMoveSelect::
+	special CloseBattleFrontierTutorWindow
+	msgbox PokemonCenter_MoveTutor_Text_YouDontWantTo, MSGBOX_DEFAULT
+	release
+	end
+
+PokemonCenter_MoveTutor_EventScript_ComeBackLater::
+	special CloseBattleFrontierTutorWindow
+	msgbox PokemonCenter_MoveTutor_Text_TutorGuyUnableToTeachYet, MSGBOX_DEFAULT
+	release
+	end
+
+PokemonCenter_MoveTutor_EventScript_MoreTrickHousePls::
+	special CloseBattleFrontierTutorWindow
+	msgbox PokemonCenter_MoveTutor_Text_BeatTrickHouseMan, MSGBOX_DEFAULT
+	release
+	end
+
+@ VAR_0x8008 is the price
+@ VAR_TEMP_C is the scroll multichoice ID
+@ VAR_TEMP_FRONTIER_TUTOR_SELECTION is the move selection
+@ VAR_TEMP_FRONTIER_TUTOR_ID is which move tutor was spoken to
+
+PokemonCenter_MoveTutor_EventScript_ConfirmMoveSelection::
+	special BufferBattleFrontierTutorMoveName
+	msgbox PokemonCenter_MoveTutor_Text_MoveWillBe1HeartScale, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PokemonCenter_MoveTutor_EventScript_ChooseNewMove
+	checkitem ITEM_HEART_SCALE
+	goto_if_eq VAR_RESULT, TRUE, PokemonCenter_MoveTutor_EventScript_TeachTutorMove
+	special CloseBattleFrontierTutorWindow
+	msgbox PokemonCenter_MoveTutor_Text_NoHeartScale, MSGBOX_DEFAULT
+	release
+	end
+
+PokemonCenter_MoveTutor_EventScript_TeachTutorMove::
+	msgbox PokemonCenter_MoveTutor_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	special CloseBattleFrontierTutorWindow
+	special ChooseMonForMoveTutor
+	waitstate
+	goto_if_eq VAR_RESULT, FALSE, PokemonCenter_MoveTutor_EventScript_CancelChooseMon
+	removeitem ITEM_HEART_SCALE
+	release
+	end
+
+PokemonCenter_MoveTutor_EventScript_ChooseNewMove::
+	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 0, PokemonCenter_MoveTutor_EventScript_DifferentVanillaTutorMove
+	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 1, PokemonCenter_MoveTutor_EventScript_DifferentAdditionalTutorMove
+	goto PokemonCenter_MoveTutor_EventScript_DifferentHouseTutorMove
+	end
+
+PokemonCenter_MoveTutor_EventScript_CancelChooseMon::
+	msgbox PokemonCenter_MoveTutor_Text_YouDontWantTo, MSGBOX_DEFAULT
+	release
+	end
+
 RustboroCity_PokemonSchool_EventScript_SnoreTutor::
 	lock
 	faceplayer
